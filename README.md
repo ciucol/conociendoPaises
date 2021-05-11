@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Conociendo Asia / Primer proyecto ReactJS Alone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Día 1`
 
-## Available Scripts
+**Domingo 9 de mayo de 2021 - 7:30pm**
 
-In the project directory, you can run:
+1. Inicio el proyecto usando
+   ```
+   npx create-react-app nombredelproyecto //el nombre del proyecto debe ser todo minúsculas
+   ```
+2. Creo la carpeta `components` para crear y administrar los componentes
+3. Creo la carpeta `pages` para manejar todas las vistas
+   Ambas cosas las hago en `src`
+4. Creo un repo en GitHub, agregó localmente el remote usando
 
-### `yarn start`
+   ```
+   git remote add origin nombreDelRepoEnGithub
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+5. Instalo `React Router`para manejar las rutas usando `npm install react-router-dom`
+6. creo en la carpeta `components` un archivo `routes`para manejar las rutas de la app que serán 3 el path `/` que mostrará la landing, el path `/countries` que mostrarà la lista de países y el path `/about` que carga este readme, voy a tratar de traerlo de la API de github. No se si se pueda hacer -> [Documentación Api de Github](https://docs.github.com/en/rest/reference/repos#get-a-repository)
+7. Creo una carpeta `ìmg`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Estos son los diseños de la primera versión
 
-### `yarn test`
+<figure>
+    <img src="./src/img/1 - Screen 1.png">
+    <figcaption>Landing día - path="/"</figcaption>
+    <br/>
+    <img src="./src/img/2 - Screen  2.png">
+    <figcaption>Países día - path="/countries"</figcaption>
+    <br/>
+    <img src="./src/img/3 - Screen  3.png">
+    <figcaption>Landing noche (aún no se si es otro path) - path="/"</figcaption>
+    <br/>
+    <img src="./src/img/4 - Screen  4.png">
+    <figcaption>Países noche (aún no se si es otro path) - path="/countries"</figcaption>
+    <br/>
+</figure>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+8. Reviso la documentación de GitHub para escribir de manera decente un Readme 😳 -> [Documentación Readme - GitHub](https://docs.github.com/es/github/writing-on-github/basic-writing-and-formatting-syntax)
+   > ha pasado una hora y aún no inicio con el código
+9. Voy a crear las rutas y para eso miro la documentación e [React Router](https://reactrouter.com/web/guides/quick-start)
+10. Voy primero a crear la vista `/countries`y para eso voy a descomponer en componentes y a crear estos
 
-### `yarn build`
+<figure>
+    <img src="./src/img/components/2 - countries_components.png"/>
+    <figcaption>Países por componentes</figcaption>
+</fugure>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+11. Voy a usar dos API's: https://restcountries.eu/rest/v2/region/asia para obtener los países y su info y https://es.wikipedia.org/w/api.php?action=query&list=search&srprop=snippet&format=json&origin=*&utf8=&srsearch=japon para la descripción del país desde wikipedia (este fue el primer resultado que encontré, seguramente debo buscar más).
+12. Voy a crear el componente `CardsCountries` que es el que llama a `CardCountry`
+13. Voy a crear el primer componente `Country` que consume la API de países y lo voy a usar dentro del componente `CardsCountries` y el componente `CardCountry`
+14.
